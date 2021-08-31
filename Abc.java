@@ -52,11 +52,22 @@ int n;
 
 Scanner sc = new Scanner(System.in);
 System.out.println("enter total number of  teachers");
-n= sc.nextInt();
-
-System.out.println("enter your teacher details");
+ n= sc.nextInt();
+sc.nextLine();
 
 Teacher techr[] = new Teacher[n];
+
+
+
+while(option!=0){
+System.out.println("Choose an option number from below lists: \n 1.Create a new Teacher.\n 2.Remove a Teacher.\n 3.Count the number of teachers.\n4.Display name of all the teachers and their subject. \n 5.Given specific Id, display detail of the specific teacher. \n 0. Exit");
+option = sc.nextInt();
+
+switch(option){
+
+case 1:
+
+System.out.println("enter your teacher details");
 for(int i=0;i<n;i++){
 int id = sc.nextInt();
 
@@ -69,15 +80,6 @@ String subject = sc.nextLine();
 
 techr[i] = new Teacher(id,age,name,subject);
 }
-
-while(option!=0){
-System.out.println("Choose an option number from below lists: \n 1.Create a new Teacher.\n 2.Remove a Teacher.\n 3.Count the number of teachers.\n4.Display name of all the teachers and their subject. \n 5.Given specific Id, display detail of the specific teacher. \n 0. Exit");
-option = sc.nextInt();
-
-switch(option){
-
-case 1:
-
 
 break;
 
@@ -118,10 +120,10 @@ case 4:
 
 for(int i=0;i<n;i++){
 System.out.println("Teacher name is " +techr[i].getName()+"  ,Subject ->"+techr[i].getSubject());
+}
 break;
 
 
-}
 }
 }
 
